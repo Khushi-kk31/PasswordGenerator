@@ -1,0 +1,318 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+:root{
+    --box-color : rgba(10, 14, 49, 0.7);
+    --box-color2 : rgba(28, 33, 65, 1); 
+    --fade-color:  #e5eaff;
+}
+
+/* loader */
+.center {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 1);
+  }
+  .wave {
+    width: 5px;
+    height: 100px;
+    background: linear-gradient(45deg, cyan, #fff);
+    margin: 10px;
+    animation: wave 1s linear infinite;
+    border-radius: 20px;
+  }
+  .wave:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .wave:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .wave:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  .wave:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+  .wave:nth-child(6) {
+    animation-delay: 0.5s;
+  }
+  .wave:nth-child(7) {
+    animation-delay: 0.6s;
+  }
+  .wave:nth-child(8) {
+    animation-delay: 0.7s;
+  }
+  .wave:nth-child(9) {
+    animation-delay: 0.8s;
+  }
+  .wave:nth-child(10) {
+    animation-delay: 0.9s;
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
+.container{
+    width: 100%;
+    height: 100%;
+    background: url("./assets/bg-img.jpg");
+    background-size: cover;
+    z-index: 10;
+    display: flex;
+}
+.container .left-container{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-container h3{
+    font-size: 5rem;
+    width: 60%;
+    color: #fff;
+    padding: 0 40px;
+    border-left: 9px solid white;
+    border-radius: 2px;
+    animation: slideRight 3s linear;
+}
+@keyframes slideRight {
+    0%{
+        transform: translateX(-50%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.right-container{
+    width: 50%;
+    height: 100%;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right-container .box{
+    width: 65%;
+    background-color:var(--box-color);
+    color: white;
+    border-radius: 1.2rem;
+    box-shadow: 0 0 2px #fff;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 20px 30px;
+    animation: slideLeft 3s linear;
+}
+@keyframes slideLeft {
+    0%{
+        transform: translateX(50%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.right-container .box h3{
+    background-color: var(--box-color2);
+    text-transform: capitalize;
+    padding: 20px 20px;
+    text-align: center;
+    font-size: 1.7rem;
+    border-radius: 1rem;
+}
+.output-box{
+    width: 100%;
+    margin-top: 1rem;
+    background-color: var(--box-color2);
+    padding: 14px 28px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1rem;
+    position: relative;
+}
+.output-box input{
+    background-color: var(--box-color2);
+    border:none;
+    letter-spacing: 3px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+.output-box button{
+    position: relative;
+    border: none;
+}
+.output-box button span{
+    background-color: #fff;
+    color: var(--box-color2);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 4px 8px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 10px;
+    margin-left: -30px;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+    }
+
+    .copied.active{
+    opacity: 1;
+    transform: scale(1);
+   }
+
+.output-box button img{
+    background-color: var(--box-color2);
+    cursor: pointer;
+}
+
+.input-container{
+    background-color: var(--box-color2);
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    padding: 14px 28px;
+}
+.input-container .length-container{
+    display: flex;
+    justify-content: space-between;
+    padding:10px 0px;
+    
+}
+.input-container .length-container h4{
+    
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+.slider{
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+.slider:hover{
+    cursor: pointer;
+}
+.input-checkbox{
+    margin-bottom: .5rem;
+    display: flex;
+    gap: 16px;
+}
+
+.input-checkbox input{
+    height: 26px;
+    width: 26px;
+}
+
+.input-checkbox input:hover{
+    cursor: pointer;
+}
+
+.strength-container{
+    display: flex;
+    justify-content: space-between;
+    padding:10px 0px;
+    width: 100%;
+}
+.strength-container h4{
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+.strength-container div{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #f7f5f5c4;
+}
+
+.generate-button{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.generate-button button{
+    height: 3rem;
+    width: 100%;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 8px;
+}
+.generate-button button:hover{
+    cursor: pointer;
+    background-color:var(--fade-color);
+}
+
+
+
+
+
+
+@media (max-width:960px) {
+    .wrapper{
+        overflow-y: auto;
+    }
+    .container{
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .container .left-container{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 3rem;
+    }
+    .right-container{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    .left-container h3{
+        width: 100%;
+    }
+    .right-container .box{
+        width: 80%;
+    }
+}
+@media (max-width:412px ){
+    .left-container h3{
+       font-size: 3rem;
+    }
+    .right-container .box{
+        width: 95%;
+        padding: 14px 18px;
+    }
+    .right-container .box h3{
+        font-size: 1.2rem;
+    }
+}
